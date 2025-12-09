@@ -35,12 +35,50 @@
       cursor: pointer;
       transition: all 0.5s ease;
     }
+
+    /* Portrait mode: deliberately overlapped */
+    @media screen and (orientation: portrait) {
+      h1 {
+        position: absolute;
+        top: 40px;
+        left: 20px;
+      }
+      .static-text {
+        position: absolute;
+        top: 60px;
+        left: 30px;
+        width: 80%;
+        background: rgba(0,0,0,0.3);
+      }
+      .button-area {
+        position: absolute;
+        top: 80px;
+        left: 40px;
+      }
+    }
+
+    /* Landscape mode: proper layout */
+    @media screen and (orientation: landscape) {
+      h1 {
+        position: static;
+        color: inherit;
+      }
+      .static-text {
+        position: static;
+        background: none;
+        width: auto;
+      }
+      .button-area {
+        position: static;
+        margin-top: 40px;
+        justify-content: center;
+      }
+    }
   </style>
 </head>
 <body>
   <h1 id="title">Applitools Visual Testing Demo</h1>
 
-  <!-- Static text about AI role in testing -->
   <div class="static-text">
     Artificial Intelligence plays a crucial role in modern software testing.  
     It helps detect subtle visual differences, adapts to dynamic content,  
